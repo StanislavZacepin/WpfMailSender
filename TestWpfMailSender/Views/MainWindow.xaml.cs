@@ -20,6 +20,7 @@ namespace TestWpfMailSender
     /// </summary>
     public partial class MainWindow : Window
     {
+        //Главное окно
         public MainWindow()
         {
             InitializeComponent();
