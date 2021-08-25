@@ -21,7 +21,12 @@
                 <MenuItem Header="О Програме"/>
             </MenuItem>
         </Menu>
-        <StatusBar DockPanel.Dock="Bottom"></StatusBar>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem DockPanel.Dock="Right">
+                <ResizeGrip/>
+            </StatusBarItem>
+            <StatusBarItem Content="Готов к работе"/>
+        </StatusBar>
         <TabControl></TabControl>
     </DockPanel>
 </Window>
