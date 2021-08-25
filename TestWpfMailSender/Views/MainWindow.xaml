@@ -27,6 +27,13 @@
             </StatusBarItem>
             <StatusBarItem Content="Готов к работе"/>
         </StatusBar>
-        <TabControl></TabControl>
+        <TabControl>
+            <TabItem Header="Списки"/>
+            <TabItem Header="Планировщик"/>
+            <TabItem Header="Письма"/>
+            <TabItem Header="Проверка орфографии"/>
+            <TabItem Header="Переводчик"/>
+            <TabItem Header="Статистика"/>
+        </TabControl>
     </DockPanel>
 </Window>
