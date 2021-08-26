@@ -65,7 +65,7 @@
                             <TextBlock VerticalAlignment="Center" Text="Перейти в письма"/>
                             <Button>[Перейти]</Button>
                         </ToolBar>
-                        <ToolBar Band="2">
+                        <ToolBar Band="2" BandIndex="2">
                             <TextBlock VerticalAlignment="Center" Text="Перейти к статистике"/>
                             <Button>[Перейти]</Button>
                         </ToolBar>
