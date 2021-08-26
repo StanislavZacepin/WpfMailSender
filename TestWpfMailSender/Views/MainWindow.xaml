@@ -36,10 +36,23 @@
                                 <ComboBoxItem>smtp.mail.ru:2525</ComboBoxItem>
                                 <ComboBoxItem>smtp.yandex.ru:465</ComboBoxItem>
                                 <ComboBoxItem>smtp.gmail.ru:587</ComboBoxItem>
-                            </ComboBox>
-                            <Button>Добавить</Button>
-                            <Button>Редоктировать</Button>
-                            <Button>Убавить</Button>
+                            </ComboBox>                           
+                            <Button>
+                                <StackPanel Orientation="Horizontal" >
+                                    <Image Source="/media/Add.png" Width="16" Margin="0,0,5,0"/>
+                                    <TextBlock Text="Добавить"/>
+                                </StackPanel>
+                            </Button>
+                            <Button ToolTip="Редактировать">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/media/edit_1.png" Width="16"/>
+                                </StackPanel>
+                            </Button>                            
+                            <Button ToolTip="Удалить">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/media/Delete.png" Width="16" Margin="0,0,5,0" />
+                                </StackPanel>
+                            </Button>
                         </ToolBar>
                         <ToolBar Band="1" BandIndex="0" Header="Отправитель">
                             <ComboBox MinWidth="120" MaxWidth="200" SelectedIndex="0">
@@ -47,15 +60,41 @@
                                 <ComboBoxItem>Stanislav@mail.ru</ComboBoxItem>
                                 <ComboBoxItem>Stanislav@gmail.com</ComboBoxItem>
                             </ComboBox>
-                            <Button>Добавить</Button>
-                            <Button>Редоктировать</Button>
-                            <Button>Убавить</Button>
+                            <Button>
+                                <StackPanel Orientation="Horizontal" >
+                                    <Image Source="/media/Add.png" Width="16" Margin="0,0,5,0"/>
+                                    <TextBlock Text="Добавить"/>
+                                </StackPanel>
+                            </Button>
+                            <Button ToolTip="Редактировать">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/media/edit_1.png" Width="16"/>
+                                </StackPanel>
+                            </Button>
+                            <Button ToolTip="Удалить">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/media/Delete.png" Width="16" Margin="0,0,5,0" />
+                                </StackPanel>
+                            </Button>
                         </ToolBar>
                         <ToolBar Band="2" BandIndex="1" Header="Получатель">
-                            <TextBox Margin="8,0,0,0" MinWidth="120" MaxWidth="200"></TextBox>                           
-                            <Button>Добавить</Button>
-                            <Button>Редоктировать</Button>
-                            <Button>Убавить</Button>
+                            <TextBox Margin="8,0,0,0" MinWidth="120" MaxWidth="200"></TextBox>
+                            <Button>
+                                <StackPanel Orientation="Horizontal" >
+                                    <Image Source="/media/Add.png" Width="16" Margin="0,0,5,0"/>
+                                    <TextBlock Text="Добавить"/>
+                                </StackPanel>
+                            </Button>
+                            <Button ToolTip="Редактировать">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/media/edit_1.png" Width="16"/>
+                                </StackPanel>
+                            </Button>
+                            <Button ToolTip="Удалить">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/media/Delete.png" Width="16" Margin="0,0,5,0" />
+                                </StackPanel>
+                            </Button>
                         </ToolBar>
                         <ToolBar >
                             <TextBlock VerticalAlignment="Center" Text="Перейти в Планировщик"/>
