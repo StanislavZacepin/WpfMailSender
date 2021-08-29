@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TestWpfMailSender"
+        xmlns:fontawesome="http://schemas.fontawesome.com/icons/"
+        xmlns:local="clr-namespace:TestWpfMailSender"      
         mc:Ignorable="d"
         Title="MainWindow" Height="450" MinWidth="670" Width="800">
     <DockPanel>
@@ -39,20 +40,12 @@
                             </ComboBox>                           
                             <Button>
                                 <StackPanel Orientation="Horizontal" >
-                                    <Image Source="/media/Add.png" Width="16" Margin="0,0,5,0"/>
-                                    <TextBlock Text="Добавить"/>
+                                    <fontawesome:ImageAwesome Height="12" Icon="Solid_PlusCircle" Foreground="DarkGreen" Margin="2,0,5,0" />
+                                    <TextBlock Text="Добавить" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Button>
-                            <Button ToolTip="Редактировать">
-                                <StackPanel Orientation="Horizontal">
-                                    <Image Source="/media/edit_1.png" Width="16"/>
-                                </StackPanel>
-                            </Button>                            
-                            <Button ToolTip="Удалить">
-                                <StackPanel Orientation="Horizontal">
-                                    <Image Source="/media/Delete.png" Width="16" Margin="0,0,5,0" />
-                                </StackPanel>
-                            </Button>
+                            <Button ToolTip="Редактировать" fontawesome:Awesome.Content="Solid_Edit" Foreground="Orange"/>
+                            <Button ToolTip="Удалить" fontawesome:Awesome.Content="Solid_TrashAlt" Foreground="DarkRed" />
                         </ToolBar>
                         <ToolBar Band="1" BandIndex="0" Header="Отправитель">
                             <ComboBox MinWidth="120" MaxWidth="200" SelectedIndex="0">
@@ -62,51 +55,35 @@
                             </ComboBox>
                             <Button>
                                 <StackPanel Orientation="Horizontal" >
-                                    <Image Source="/media/Add.png" Width="16" Margin="0,0,5,0"/>
-                                    <TextBlock Text="Добавить"/>
+                                    <fontawesome:ImageAwesome Height="12" Icon="Solid_PlusCircle" Foreground="DarkGreen" Margin="0,0,5,0"/>
+                                    <TextBlock Text="Добавить" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Button>
-                            <Button ToolTip="Редактировать">
-                                <StackPanel Orientation="Horizontal">
-                                    <Image Source="/media/edit_1.png" Width="16"/>
-                                </StackPanel>
-                            </Button>
-                            <Button ToolTip="Удалить">
-                                <StackPanel Orientation="Horizontal">
-                                    <Image Source="/media/Delete.png" Width="16" Margin="0,0,5,0" />
-                                </StackPanel>
-                            </Button>
+                            <Button ToolTip="Редактировать" fontawesome:Awesome.Content="Solid_Edit" Foreground="Orange"/>
+                            <Button ToolTip="Удалить" fontawesome:Awesome.Content="Solid_Trashalt" Foreground="DarkRed" />
                         </ToolBar>
                         <ToolBar Band="2" BandIndex="1" Header="Получатель">
                             <TextBox Margin="8,0,0,0" MinWidth="120" MaxWidth="200"></TextBox>
                             <Button>
                                 <StackPanel Orientation="Horizontal" >
-                                    <Image Source="/media/Add.png" Width="16" Margin="0,0,5,0"/>
-                                    <TextBlock Text="Добавить"/>
+                                    <fontawesome:ImageAwesome Height="12" Icon="Solid_PlusCircle" Foreground="DarkGreen" Margin="0,0,5,0"/>
+                                    <TextBlock Text="Добавить" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Button>
-                            <Button ToolTip="Редактировать">
-                                <StackPanel Orientation="Horizontal">
-                                    <Image Source="/media/edit_1.png" Width="16"/>
-                                </StackPanel>
-                            </Button>
-                            <Button ToolTip="Удалить">
-                                <StackPanel Orientation="Horizontal">
-                                    <Image Source="/media/Delete.png" Width="16" Margin="0,0,5,0" />
-                                </StackPanel>
-                            </Button>
+                            <Button ToolTip="Редактировать" fontawesome:Awesome.Content="Solid_Edit" Foreground="Orange"/>
+                            <Button ToolTip="Удалить" fontawesome:Awesome.Content="Solid_Trashalt" Foreground="DarkRed" />
                         </ToolBar>
                         <ToolBar >
                             <TextBlock VerticalAlignment="Center" Text="Перейти в Планировщик"/>
-                            <Button>[Перейти]</Button>
+                            <Button ToolTip="Перейти" fontawesome:Awesome.Content="Regular_Clock" Foreground="DarkBlue" Margin="5,0,0,0"/>
                         </ToolBar>
                         <ToolBar Band="1">
                             <TextBlock VerticalAlignment="Center" Text="Перейти в письма"/>
-                            <Button>[Перейти]</Button>
+                            <Button ToolTip="Перейти" fontawesome:Awesome.Content="Solid_MailBulk" Foreground="DarkBlue" Margin="44,0,0,0"/>
                         </ToolBar>
-                        <ToolBar Band="2" BandIndex="2">
+                        <ToolBar Band="2" BandIndex="2" Margin="1,0,0,0">
                             <TextBlock VerticalAlignment="Center" Text="Перейти к статистике"/>
-                            <Button>[Перейти]</Button>
+                            <Button ToolTip="Перейти" fontawesome:Awesome.Content="Brands_Telegram"  Foreground="DarkBlue" Margin="28,0,0,0"/>
                         </ToolBar>
                     </ToolBarTray>
                     <GroupBox Margin="3" Header="Список получателей">
