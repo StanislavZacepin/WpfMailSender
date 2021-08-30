@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TestWpfMailSender.Models;
+using WpfMailSender.lib.Service;
 
 namespace TestWpfMailSender.Data
 {
@@ -11,22 +12,14 @@ namespace TestWpfMailSender.Data
     {
         static Random random = new Random();
         public static List<Server> Servers { get; } = Enumerable.Range(1, 10)
-            .Select(i => new Server 
+            .Select(i => new Server
             {
-                Name=$"Сервер-{i}",
-                Addres=$"smtp.server{i}.com",
-                Port=i % 2==0? 25:2525,
-                UseSSL= i % 2==0,
-                Login=$"Login-{i}",
-                Password=$"{(char)i + random.Next(0, 37)}" +
-                $"{(char)i+random.Next(0,37)}" +
-                $"{(char)i + random.Next(0, 37)}" +
-                $"{(char)i + random.Next(0, 37)}" +
-                $"{(char)i + random.Next(0, 37)}" +
-                $"{(char)i + random.Next(0, 37)}" +
-                $"{(char)i + random.Next(0, 37)}" +
-                $"{(char)i + random.Next(0, 37)}",
-
+                Name = $"Сервер-{i}",
+                Addres = $"smtp.server{i}.com",
+                Port = i % 2 == 0 ? 25 : 2525,
+                UseSSL = i % 2 == 0,
+                Login = $"Login-{i}",
+                Password = TextEncoder.Encode($"Password-{i}", 7),
             })
             .ToList();
 

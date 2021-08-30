@@ -13,6 +13,6 @@
 
         public string Password { get; set; }
 
-        public override string ToString() => $"{Name}: {Port}";
+        public override string ToString() => $"{Addres}: {Port}";
     }
 }
