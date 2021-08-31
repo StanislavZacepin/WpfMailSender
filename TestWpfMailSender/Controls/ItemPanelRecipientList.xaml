@@ -8,7 +8,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <GroupBox Margin="3" Header="Список получателей">
+        <GroupBox Margin="3" Header="{Binding Title, RelativeSource={RelativeSource AncestorType=local:ItemPanelRecipientList}}">
             <DataGrid AutoGenerateColumns="False" IsReadOnly="False"
                                   GridLinesVisibility="Vertical" 
                                   VerticalGridLinesBrush="DarkBlue"

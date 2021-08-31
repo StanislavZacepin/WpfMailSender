@@ -17,12 +17,31 @@ namespace TestWpfMailSender.Controls
 {
     /// <summary>
     /// Логика взаимодействия для ItemPanelRecipientList.xaml
+    ///  Свойства зависимости для Title
+    /// Для свойства зависимости. Нужно в название public static readonly DependencyProperty
+    /// Должно присуствуват название свойства которуму делаем привязку
+    /// public static readonly DependencyProperty TitleProperty
+    /// Далее регистрируем обьект
+    /// nameof -  указываем к кокому свойству привязка
+    /// typeof- Тип данных свойства
+    /// typeof - тип свойства которуму принадлижит панель
+    /// new PropertyMetadata(default  Задать дополнитльные мета данные  где указываем деволтное значения
     /// </summary>
     public partial class ItemPanelRecipientList : UserControl
     {
-        public ItemPanelRecipientList()
+        public static readonly DependencyProperty TitleProperty = DependencyProperty.Register(
+            nameof(Title),
+            typeof(string),
+            typeof(ItemPanelRecipientList),
+            new PropertyMetadata(default(string)));
+
+        public string Title
         {
-            InitializeComponent();
+            get => (string)GetValue(TitleProperty);
+            set => SetValue(TitleProperty, value);
         }
+
+            
+        public ItemPanelRecipientList() => InitializeComponent();
     }
 }

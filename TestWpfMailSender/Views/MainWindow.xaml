@@ -35,13 +35,13 @@
                 <DockPanel>
                     <ToolBarTray DockPanel.Dock="Top">
                         <ToolBar Band="0">
-                            <contr:ItemPanelServers/>
+                            <contr:ItemPanelServers Title="Сервер"/>
                         </ToolBar>
                         <ToolBar Band="1">
-                            <contr:ItemPanelSender/>
+                            <contr:ItemPanelSender Title="Отправитель"/>
                         </ToolBar>
                         <ToolBar Band="2" BandIndex="1" >
-                            <contr:ItemPanelRecipient/>
+                            <contr:ItemPanelRecipient Title="Получатель"/>
                         </ToolBar>
                         <ToolBar >
                             <TextBlock VerticalAlignment="Center" Text="Перейти в Планировщик"/>
@@ -56,7 +56,7 @@
                             <Button ToolTip="Перейти" fontawesome:Awesome.Content="Brands_Telegram"  Foreground="DarkBlue" Margin="28,0,0,0"/>
                         </ToolBar>
                     </ToolBarTray>
-                    <contr:ItemPanelRecipientList/>
+                    <contr:ItemPanelRecipientList Title="Список получателей"/>
                 </DockPanel>
             </TabItem>
             <TabItem Header="Планировщик">

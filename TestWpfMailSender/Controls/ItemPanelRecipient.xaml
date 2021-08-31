@@ -11,7 +11,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="27" d:DesignWidth="385">
     <DockPanel>
-        <TextBlock Text="Получатель" VerticalAlignment="Center" Margin="5,0"/>
+        <TextBlock Text="{Binding Title, RelativeSource={RelativeSource AncestorType=local:ItemPanelRecipient}}" VerticalAlignment="Center" Margin="5,0"/>
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
             <StackPanel.Resources>
                 <Style TargetType="Button">
@@ -30,7 +30,7 @@
             <Button ToolTip="Редактировать" fontawesome:Awesome.Content="Solid_Edit" Foreground="Orange"/>
             <Button ToolTip="Удалить" fontawesome:Awesome.Content="Solid_Trashalt" Foreground="DarkRed" />
         </StackPanel>
-        <ComboBox SelectedIndex="0" VerticalAlignment="Center" Margin="6,0,0,0" MinWidth="200"  MaxWidth="220"
+        <ComboBox SelectedIndex="0" VerticalAlignment="Center" Margin="6.5,0,0,0" MinWidth="200"  MaxWidth="220"
                                       ItemsSource="{x:Static data:TestData.Recipients}">
             <ComboBox.ItemTemplate>
                 <DataTemplate DataType="model:Recipient">

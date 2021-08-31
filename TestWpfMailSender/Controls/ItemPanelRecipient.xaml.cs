@@ -20,9 +20,16 @@ namespace TestWpfMailSender.Controls
     /// </summary>
     public partial class ItemPanelRecipient : UserControl
     {
-        public ItemPanelRecipient()
+        public readonly DependencyProperty TitleProperty = DependencyProperty.Register(
+            nameof(Title),
+            typeof(string),
+            typeof(ItemPanelRecipient),
+            new PropertyMetadata(default(string)));
+        public string Title
         {
-            InitializeComponent();
+            get => (string)GetValue(TitleProperty);
+            set => SetValue(TitleProperty,value);
         }
+        public ItemPanelRecipient() => InitializeComponent();
     }
 }
