@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fontawesome="http://schemas.fontawesome.com/icons/"
-        xmlns:data="clr-namespace:TestWpfMailSender.Data"
-        xmlns:model="clr-namespace:TestWpfMailSender.Models"
-        xmlns:local="clr-namespace:TestWpfMailSender"      
+        xmlns:data="clr-namespace:TestWpfMailSender.Data"       
+        xmlns:local="clr-namespace:TestWpfMailSender" 
+        xmlns:contr="clr-namespace:TestWpfMailSender.Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" MinWidth="670" Width="800">
     <DockPanel>
@@ -34,55 +34,14 @@
             <TabItem Header="Списки">
                 <DockPanel>
                     <ToolBarTray DockPanel.Dock="Top">
-                        <ToolBar Header="Сервера">
-                            <ComboBox Margin="25,0,0,0" MinWidth="166" MaxWidth="200" SelectedIndex="0"
-                                ItemsSource="{x:Static data:TestData.Servers}">
-                                <!--DisplayMemberPath="Name"-->
-                            </ComboBox>                           
-                            <Button>
-                                <StackPanel Orientation="Horizontal" >
-                                    <fontawesome:ImageAwesome Height="12" Icon="Solid_PlusCircle" Foreground="DarkGreen" Margin="2,0,5,0" />
-                                    <TextBlock Text="Добавить" VerticalAlignment="Center"/>
-                                </StackPanel>
-                            </Button>
-                            <Button ToolTip="Редактировать" fontawesome:Awesome.Content="Solid_Edit" Foreground="Orange"/>
-                            <Button ToolTip="Удалить" fontawesome:Awesome.Content="Solid_TrashAlt" Foreground="DarkRed" />
+                        <ToolBar Band="0">
+                            <contr:ItemPanelServers/>
                         </ToolBar>
-                        <ToolBar Band="1" BandIndex="0" Header="Отправитель">
-                            <ComboBox MinWidth="120" MaxWidth="200" SelectedIndex="0"
-                                      ItemsSource="{x:Static data:TestData.Senders}">
-                                <!--<ComboBoxItem>Stanislav@ya.ru</ComboBoxItem>
-                                <ComboBoxItem>Stanislav@mail.ru</ComboBoxItem>
-                                <ComboBoxItem>Stanislav@gmail.com</ComboBoxItem>-->
-                                <ComboBox.ItemTemplate>
-                                    <DataTemplate DataType="model:Sender">
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBlock Text="{Binding Name}"/>
-                                            <TextBlock Text=":"/>
-                                            <TextBlock Text="{Binding SenderAdress}" Margin="3,0,0,0" Opacity="0.6" FontSize="10"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </ComboBox.ItemTemplate>
-                            </ComboBox>
-                            <Button>
-                                <StackPanel Orientation="Horizontal" >
-                                    <fontawesome:ImageAwesome Height="12" Icon="Solid_PlusCircle" Foreground="DarkGreen" Margin="0,0,5,0"/>
-                                    <TextBlock Text="Добавить" VerticalAlignment="Center"/>
-                                </StackPanel>
-                            </Button>
-                            <Button ToolTip="Редактировать" fontawesome:Awesome.Content="Solid_Edit" Foreground="Orange"/>
-                            <Button ToolTip="Удалить" fontawesome:Awesome.Content="Solid_Trashalt" Foreground="DarkRed" />
+                        <ToolBar Band="1">
+                            <contr:ItemPanelSender/>
                         </ToolBar>
-                        <ToolBar Band="2" BandIndex="1" Header="Получатель">
-                            <TextBox Margin="8,0,0,0" MinWidth="166" MaxWidth="200"></TextBox>
-                            <Button>
-                                <StackPanel Orientation="Horizontal" >
-                                    <fontawesome:ImageAwesome Height="12" Icon="Solid_PlusCircle" Foreground="DarkGreen" Margin="0,0,5,0"/>
-                                    <TextBlock Text="Добавить" VerticalAlignment="Center"/>
-                                </StackPanel>
-                            </Button>
-                            <Button ToolTip="Редактировать" fontawesome:Awesome.Content="Solid_Edit" Foreground="Orange"/>
-                            <Button ToolTip="Удалить" fontawesome:Awesome.Content="Solid_Trashalt" Foreground="DarkRed" />
+                        <ToolBar Band="2" BandIndex="1" >
+                            <contr:ItemPanelRecipient/>
                         </ToolBar>
                         <ToolBar >
                             <TextBlock VerticalAlignment="Center" Text="Перейти в Планировщик"/>
@@ -97,20 +56,7 @@
                             <Button ToolTip="Перейти" fontawesome:Awesome.Content="Brands_Telegram"  Foreground="DarkBlue" Margin="28,0,0,0"/>
                         </ToolBar>
                     </ToolBarTray>
-                    <GroupBox Margin="3" Header="Список получателей">
-                        <DataGrid AutoGenerateColumns="False" IsReadOnly="False"
-                                  GridLinesVisibility="Vertical" 
-                                  VerticalGridLinesBrush="DarkBlue"
-                                  AlternatingRowBackground="#FFA7A7F5"
-                                  ItemsSource="{x:Static data:TestData.Recipients}">
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="ID" MinWidth="30"/>
-                                <DataGridTextColumn Header="Имя" MinWidth="100" Binding="{Binding Name}"/>
-                                <DataGridTextColumn Header="Адрес" MinWidth="150" Binding="{Binding RecipientAdress}"/>
-                                <DataGridTextColumn Header="Описание" Width="*"/>
-                            </DataGrid.Columns>
-                        </DataGrid>
-                    </GroupBox>
+                    <contr:ItemPanelRecipientList/>
                 </DockPanel>
             </TabItem>
             <TabItem Header="Планировщик">

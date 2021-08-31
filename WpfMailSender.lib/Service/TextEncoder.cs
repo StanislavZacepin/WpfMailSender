@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfMailSender.lib.Service
 {
+    // для тестовой кодировки 
    public static class TextEncoder
     {
         public static string Encode(string str, int key = 1)
