@@ -8,9 +8,10 @@
              xmlns:data="clr-namespace:TestWpfMailSender.Data"
              xmlns:fontawesome="http://schemas.fontawesome.com/icons/"
              mc:Ignorable="d" 
-             d:DesignHeight="27" d:DesignWidth="385">
+             d:DesignHeight="27" d:DesignWidth="385"
+             DataContext="{Binding RelativeSource={RelativeSource self}}">
     <DockPanel>
-        <TextBlock Text="Отправитель" VerticalAlignment="Center" Margin="5,0"/>
+        <TextBlock Text="{Binding Title}" VerticalAlignment="Center" Margin="5,0"/>
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
             <StackPanel.Resources>
                 <Style TargetType="Button">
