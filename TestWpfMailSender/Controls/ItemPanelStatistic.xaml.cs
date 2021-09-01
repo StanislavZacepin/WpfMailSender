@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfMailSender
+namespace TestWpfMailSender.Controls
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для ItemPanelStatistic.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ItemPanelStatistic : UserControl
     {
-        public MainWindow()
+        public ItemPanelStatistic()
         {
             InitializeComponent();
         }

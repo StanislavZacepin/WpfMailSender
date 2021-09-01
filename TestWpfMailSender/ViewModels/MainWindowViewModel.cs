@@ -4,8 +4,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using TestWpfMailSender.Infrastructure;
 using TestWpfMailSender.Models;
+using WpfMailSender.lib.Commands;
 using WpfMailSender.lib.ViewModels.Base;
 
 namespace TestWpfMailSender.ViewModels
@@ -21,6 +23,19 @@ namespace TestWpfMailSender.ViewModels
         public string Status { get => _Status; set => Set(ref _Status, value); }
 
         public ObservableCollection<Server> Servers { get; } = new ();
+
+        #region Команды
+        private ICommand _LoadServersCommand;
+        public ICommand LoadServersCommand => _LoadServersCommand
+            ??= new LambdaCommand(OnLoadServersCommandExecute, CanLoadServersCommandExecute);
+        private bool CanLoadServersCommandExecute(object p) => Servers.Count == 0;
+        private void OnLoadServersCommandExecute(object p)
+        {
+            LoadServers();
+            
+        }
+
+        #endregion
         public MainWindowViewModel(ServersRepository Servers) => _Servers = Servers;
         private void LoadServers()
         {

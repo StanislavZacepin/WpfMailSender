@@ -68,7 +68,7 @@
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition />                       
                     </Grid.ColumnDefinitions>
-                    <GroupBox Grid.Column="0" Header="Управление" >
+                    <GroupBox MinWidth="200" Grid.Column="0" Header="Управление" >
                         <StackPanel>
                             <TextBlock HorizontalAlignment="Center" Margin="0,5,0,0" Text="Дата" />                            
                             <Calendar/>
@@ -193,7 +193,7 @@
                             </ListBoxItem>
                         </ListBox>                        
                     </GroupBox>
-                    <GridSplitter MinWidth="200" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="3" Background="Transparent"/>
+                    <GridSplitter  Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="3" Background="Transparent"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Письма">
@@ -222,7 +222,9 @@
             </TabItem>
             <TabItem Header="Проверка орфографии"/>
             <TabItem Header="Переводчик"/>
-            <TabItem Header="Статистика"/>
+            <TabItem Header="Статистика">
+                <contr:ItemPanelStatistic/>
+            </TabItem>
         </TabControl>
     </DockPanel>
 </Window>
