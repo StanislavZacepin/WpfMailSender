@@ -4,11 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fontawesome="http://schemas.fontawesome.com/icons/"
-        xmlns:data="clr-namespace:TestWpfMailSender.Data"       
+        xmlns:data="clr-namespace:TestWpfMailSender.Data"    
+        xmlns:mwvm="clr-namespace:TestWpfMailSender.ViewModels"
         xmlns:local="clr-namespace:TestWpfMailSender" 
         xmlns:contr="clr-namespace:TestWpfMailSender.Controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" MinWidth="670" Width="800">
+        Title="{Binding Title}" Height="450" MinWidth="670" Width="800">
+    <Window.DataContext>
+        <mwvm:MainWindowViewModel/>
+    </Window.DataContext>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">
@@ -28,7 +32,7 @@
             <StatusBarItem DockPanel.Dock="Right">
                 <ResizeGrip/>
             </StatusBarItem>
-            <StatusBarItem Content="Готов к работе"/>
+            <StatusBarItem Content="{Binding Status}"/>
         </StatusBar>
         <TabControl>
             <TabItem Header="Списки">
