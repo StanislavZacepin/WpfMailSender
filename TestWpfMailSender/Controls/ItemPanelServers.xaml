@@ -30,7 +30,7 @@
             <Button ToolTip="Удалить" fontawesome:Awesome.Content="Solid_TrashAlt" Foreground="DarkRed" />
         </StackPanel>
         <ComboBox  MinWidth="200" MaxWidth="220" Margin="30,0,0,0" SelectedIndex="0"
-                                ItemsSource="{x:Static data:TestData.Servers}">
+                                ItemsSource="{Binding Servers}">
 
         </ComboBox>
     </DockPanel>

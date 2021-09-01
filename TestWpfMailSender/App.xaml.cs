@@ -8,6 +8,7 @@ using System.Windows;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using TestWpfMailSender.Infrastructure;
 using TestWpfMailSender.ViewModels;
 
 namespace TestWpfMailSender
@@ -31,6 +32,8 @@ namespace TestWpfMailSender
         private static void ConfigureServices(HostBuilderContext host, IServiceCollection services)
         {
             services.AddSingleton<MainWindowViewModel>();
+
+            services.AddSingleton<ServersRepository>();
         }
         
     }
