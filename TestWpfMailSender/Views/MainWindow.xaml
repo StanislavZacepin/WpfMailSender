@@ -9,10 +9,9 @@
         xmlns:local="clr-namespace:TestWpfMailSender" 
         xmlns:contr="clr-namespace:TestWpfMailSender.Controls"
         mc:Ignorable="d"
-        Title="{Binding Title}" Height="450" MinWidth="670" Width="800">
-    <Window.DataContext>
-        <mwvm:MainWindowViewModel/>
-    </Window.DataContext>
+        Title="{Binding Title}" 
+        DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
+        Height="450" MinWidth="670" Width="800">    
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">
