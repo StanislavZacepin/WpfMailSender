@@ -12,6 +12,7 @@ using TestWpfMailSender.Infrastructure;
 using TestWpfMailSender.Infrastructure.Services;
 using TestWpfMailSender.ViewModels;
 using WpfMailSender.lib.Interfaces;
+using WpfMailSender.lib.Service;
 
 namespace TestWpfMailSender
 {
@@ -38,6 +39,7 @@ namespace TestWpfMailSender
 
             services.AddSingleton<ServersRepository>();
             services.AddSingleton<IStatistic, InMemoryStatisticService>();
+            services.AddSingleton<IMailService, DebugMailService>();
         }
         
     }

@@ -11,17 +11,17 @@
         mc:Ignorable="d"
         Title="{Binding Title}" 
         DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
-        Height="450" MinWidth="670" Width="800">    
+        Height="450" MinWidth="670" Width="800">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">
                 <MenuItem Header="Окрыть"/>
                 <MenuItem Header="Сохранить"/>
-                <MenuItem Header="Загрузить"/>                
+                <MenuItem Header="Загрузить"/>
                 <Separator/>
                 <MenuItem Header="Выход" Command="{StaticResource CloseAppCommand}"/>
             </MenuItem>
-            <MenuItem Header="Справка">                
+            <MenuItem Header="Справка">
                 <MenuItem Header="Помощь"/>
                 <Separator/>
                 <MenuItem Header="О Програме"/>
@@ -65,12 +65,13 @@
             <TabItem Header="Планировщик">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition />                       
+                        <ColumnDefinition Width="38.311"/>
+                        <ColumnDefinition Width="161.689"/>
+                        <ColumnDefinition />
                     </Grid.ColumnDefinitions>
-                    <GroupBox MinWidth="200" Grid.Column="0" Header="Управление" >
+                    <GroupBox MinWidth="200" Grid.Column="0" Header="Управление" Grid.ColumnSpan="2" >
                         <StackPanel>
-                            <TextBlock HorizontalAlignment="Center" Margin="0,5,0,0" Text="Дата" />                            
+                            <TextBlock HorizontalAlignment="Center" Margin="0,5,0,0" Text="Дата" />
                             <Calendar/>
                             <TextBlock HorizontalAlignment="Center" Margin="0,5,0,0" Text="Время" />
                             <TextBox Margin="10,0" />
@@ -81,13 +82,13 @@
                                         <Setter Property="Background" Value="White"/>
                                     </Style>
                                 </StackPanel.Resources>
-                                <Button Content="Отправить"/>
+                                <Button Content="Отправить" Command="{Binding SendEmailCommand}"/>
                                 <Button Content="Заплонировать"/>
                                 <Button Content="Удалить"/>
                             </StackPanel>
                         </StackPanel>
                     </GroupBox>
-                    <GroupBox Grid.Column="1" Header="Задание">
+                    <GroupBox Grid.Column="2" Header="Задание">
                         <ListBox>
                             <ListBox.ItemContainerStyle>
                                 <Style TargetType="ListBoxItem">
@@ -191,9 +192,9 @@
                                     </Grid>
                                 </GroupBox>
                             </ListBoxItem>
-                        </ListBox>                        
+                        </ListBox>
                     </GroupBox>
-                    <GridSplitter  Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="3" Background="Transparent"/>
+                    <GridSplitter  Grid.Column="1" HorizontalAlignment="Left" Width="3" Background="Transparent" Margin="159,0,0,0"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Письма">

@@ -40,6 +40,7 @@ namespace TestWpfMailSender.Controls
             get => (string)GetValue(TitleProperty);
             set => SetValue(TitleProperty, value);
         }
+        
 
             
         public ItemPanelRecipientList() => InitializeComponent();
