@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfMailSender.lib.Interfaces
 {
-    public interface IMailService
+    interface IMailService
     {
-        void SendEmail(string From, string To, string Title, string Body);
     }
 }

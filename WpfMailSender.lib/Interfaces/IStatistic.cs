@@ -8,16 +8,16 @@ namespace WpfMailSender.lib.Interfaces
 {
     public interface IStatistic
     {
-         int SendedMailsCount { get; } 
-        event EventHandler SendedMailsCountChanged;
+         int SendedMailsCount { get; }
+
+        void MessageSended();
 
         int SendersCount { get; }
 
         int RecipientsCount { get; }
 
         TimeSpan UpTime { get; }
-        void MessageSended();
 
-
+        
     }
 }
