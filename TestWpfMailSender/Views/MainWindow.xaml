@@ -38,7 +38,7 @@
                 <DockPanel>
                     <ToolBarTray DockPanel.Dock="Top">
                         <ToolBar Band="0">
-                            <contr:ItemPanelServers Title="Сервер"/>
+                            <contr:ItemPanelServers Title="Сервер" ItemTemplate="{Binding Servers}"/>
                         </ToolBar>
                         <ToolBar Band="1">
                             <contr:ItemPanelSender Title="Отправитель"/>

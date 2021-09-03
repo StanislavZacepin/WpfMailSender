@@ -21,26 +21,24 @@
                     <Setter Property="BorderThickness" Value="0"/>
                 </Style>
             </StackPanel.Resources>              
-        <Button>
+        <Button Command="{Binding AddNewItemCoomand, RelativeSource={RelativeSource AncestorType=local:ItemPanelSender}}">
                 <StackPanel Orientation="Horizontal"  Margin="2,0,0,0">
                 <fontawesome:ImageAwesome Height="12" Icon="Solid_PlusCircle" Foreground="DarkGreen" Margin="0,0,5,0"/>
                 <TextBlock Text="Добавить" VerticalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <Button ToolTip="Редактировать" fontawesome:Awesome.Content="Solid_Edit" Foreground="Orange"/>
-        <Button ToolTip="Удалить" fontawesome:Awesome.Content="Solid_Trashalt" Foreground="DarkRed" />
+            <Button Command="{Binding EditItemCoomand, RelativeSource={RelativeSource AncestorType=local:ItemPanelSender}}"
+                    CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource AncestorType=local:ItemPanelSender}}"
+                ToolTip="Редактировать" fontawesome:Awesome.Content="Solid_Edit" Foreground="Orange"/>
+            <Button Command="{Binding RemoveItemCoomand, RelativeSource={RelativeSource AncestorType=local:ItemPanelSender}}"
+                    CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource AncestorType=local:ItemPanelSender}}"
+                ToolTip="Удалить" fontawesome:Awesome.Content="Solid_Trashalt" Foreground="DarkRed"/>
         </StackPanel>
         <ComboBox SelectedIndex="0" VerticalAlignment="Center" MinWidth="200" MaxWidth="220"
-                                      ItemsSource="{x:Static data:TestData.Senders}">
-            <ComboBox.ItemTemplate>
-                <DataTemplate DataType="model:Sender">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Name}"/>
-                        <TextBlock Text=":"/>
-                        <TextBlock Text="{Binding SenderAdress}" Margin="3,0,0,0" Opacity="0.6" FontSize="10"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
+           ItemsSource="{Binding ItemSource, RelativeSource={RelativeSource AncestorType=local:ItemPanelSender}}"
+           SelectedItem="{Binding SelectedItem, RelativeSource={RelativeSource AncestorType=local:ItemPanelSender}}"
+           ItemTemplate="{Binding ItemTemplate, RelativeSource={RelativeSource AncestorType=local:ItemPanelSender}}" 
+           DisplayMemberPath="{Binding DisplayMemberPath, RelativeSource={RelativeSource AncestorType=local:ItemPanelSender}}"/>    
+
     </DockPanel>
 </UserControl>
