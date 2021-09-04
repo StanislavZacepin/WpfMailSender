@@ -7,9 +7,19 @@
              xmlns:local="clr-namespace:TestWpfMailSender.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <DockPanel Margin="3">
+        <TextBlock Text="Получатели" DockPanel.Dock="Top" HorizontalAlignment="Center"
+                   FontWeight="Bold" FontSize="20"/>
+        <DockPanel DockPanel.Dock="Top" Margin="5,3">
+            <TextBlock Text="Фильтр: "/>
+            <TextBox/>
+        </DockPanel>
+        <UniformGrid DockPanel.Dock="Bottom" Rows="1" HorizontalAlignment="Center" Margin="3">
+            <Button Content="Загрузка данных" Margin="3,0" Padding="20,3"/>
+            <Button Content="Сохранениу данных" Margin="3,0" Padding="20,3"/>
+        </UniformGrid>
         <GroupBox Margin="3" Header="{Binding Title, RelativeSource={RelativeSource AncestorType=local:ItemPanelRecipientList}}">
-            <DataGrid AutoGenerateColumns="False" IsReadOnly="False"
+            <DataGrid Margin="5,0" AutoGenerateColumns="False" IsReadOnly="False"
                                   GridLinesVisibility="Vertical" 
                                   VerticalGridLinesBrush="DarkBlue"
                                   AlternatingRowBackground="#FFA7A7F5"
@@ -22,5 +32,5 @@
                 </DataGrid.Columns>
             </DataGrid>
         </GroupBox>
-    </Grid>
+    </DockPanel>
 </UserControl>

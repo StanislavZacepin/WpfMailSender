@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestWpfMailSender.Models.Base;
 
 namespace TestWpfMailSender.Models
 {
     // для планировщика
-    public class SchedulerTask
+    public class SchedulerTask : Entity
     {
         public DateTime Time { get; set; }
         public Server Server { get; set; }// сервер который надо будет отправить что нибудь

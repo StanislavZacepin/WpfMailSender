@@ -1,6 +1,8 @@
-﻿namespace TestWpfMailSender.Models
+﻿using TestWpfMailSender.Models.Base;
+
+namespace TestWpfMailSender.Models
 {
-    public class Server
+    public class Server : Entity
     {
         public string Name { get; set; }
         public string Addres { get; set; }
