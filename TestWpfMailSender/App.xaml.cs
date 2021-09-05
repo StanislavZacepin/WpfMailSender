@@ -8,8 +8,8 @@ using System.Windows;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using TestWpfMailSender.Infrastructure;
 using TestWpfMailSender.Infrastructure.Services;
+using TestWpfMailSender.Infrastructure.Services.InMemory;
 using TestWpfMailSender.ViewModels;
 using WpfMailSender.lib.Interfaces;
 

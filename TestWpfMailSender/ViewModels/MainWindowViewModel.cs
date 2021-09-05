@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using TestWpfMailSender.Infrastructure;
+using TestWpfMailSender.Infrastructure.Services.InMemory;
 using TestWpfMailSender.Models;
 using WpfMailSender.lib.Commands;
 using WpfMailSender.lib.ViewModels.Base;
 
 namespace TestWpfMailSender.ViewModels
 {
-   internal class MainWindowViewModel : ViewModel
+    internal class MainWindowViewModel : ViewModel
     {
         private readonly ServersRepository _Servers;
         private string _Title = "Рассыльщик";
