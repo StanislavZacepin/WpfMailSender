@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfMailSender.lib.Service
+namespace WpfMailSender.lib.Services
 {
     // для тестовой кодировки 
    public static class TextEncoder

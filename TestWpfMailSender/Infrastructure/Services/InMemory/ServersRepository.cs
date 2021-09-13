@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestWpfMailSender.Infrastructure.Services.InMemory;
 using TestWpfMailSender.Models;
-using WpfMailSender.lib.Service;
+using WpfMailSender.lib.Services;
 
 namespace TestWpfMailSender.Infrastructure.Services.InMemory
 {
     class ServersRepository : RepositoryInMemory<Server>
     {
-
-
         public ServersRepository() : base(Enumerable.Range(1, 10)
             .Select(i => new Server
             {
@@ -38,3 +35,4 @@ namespace TestWpfMailSender.Infrastructure.Services.InMemory
         }       
     }
 }
+

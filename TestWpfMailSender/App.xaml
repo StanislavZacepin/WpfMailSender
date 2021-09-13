@@ -7,6 +7,7 @@
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
         <mwvm:ViewModelLocator x:Key="Locator"/>
+        
         <comands:CloseAppCommand x:Key="CloseAppCommand"/>
     </Application.Resources>
 </Application>

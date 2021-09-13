@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TestWpfMailSender.Models;
-using WpfMailSender.lib.Service;
+using WpfMailSender.lib.Services;
 
 namespace TestWpfMailSender.Data
 {
