@@ -24,21 +24,19 @@ namespace TestWpfMailSender.Data
             .ToList();
 
         public static List<Sender> Senders { get; }
-            = Enumerable.Range(1, 100)
+            = Enumerable.Range(1, 10)
             .Select(i => new Sender 
             {
                 Name=$"Отправитель-{i}",
                 SenderAdress=$"SendAdress-{i}",
-
             })
             .ToList();
         public static List<Recipient> Recipients { get; }
-           = Enumerable.Range(1, 100)
+           = Enumerable.Range(1, 10)
            .Select(i => new Recipient
            {
                Name = $"Получатель-{i}",
                RecipientAdress = $"RecipientAdress-{i}",
-
            })
            .ToList();
 

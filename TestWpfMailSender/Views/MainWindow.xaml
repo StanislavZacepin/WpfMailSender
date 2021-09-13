@@ -6,12 +6,17 @@
         xmlns:fontawesome="http://schemas.fontawesome.com/icons/"
         xmlns:data="clr-namespace:TestWpfMailSender.Data"    
         xmlns:mwvm="clr-namespace:TestWpfMailSender.ViewModels"
-        xmlns:local="clr-namespace:TestWpfMailSender" 
+        xmlns:local="clr-namespace:TestWpfMailSender"  mc:Ignorable="d"
         xmlns:contr="clr-namespace:TestWpfMailSender.Controls"
-        mc:Ignorable="d"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"        
         Title="{Binding Title}" 
         DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
-        Height="450" MinWidth="670" Width="800">    
+        Height="450" MinWidth="670" Width="800">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadDataCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">
@@ -38,7 +43,7 @@
                 <DockPanel>
                     <ToolBarTray DockPanel.Dock="Top">
                         <ToolBar Band="0">
-                            <contr:ItemPanelServers Title="Сервер" ItemTemplate="{Binding Servers}"/>
+                            <contr:ItemPanelServers Title="Сервер" />
                         </ToolBar>
                         <ToolBar Band="1">
                             <contr:ItemPanelSender Title="Отправитель"/>
@@ -59,7 +64,16 @@
                             <Button ToolTip="Перейти" fontawesome:Awesome.Content="Brands_Telegram"  Foreground="DarkBlue" Margin="28,0,0,0"/>
                         </ToolBar>
                     </ToolBarTray>
-                    <contr:ItemPanelRecipientList Title="Список получателей"/>
+                    <GroupBox Header="Список получателей" Margin="3">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="200"/>
+                            </Grid.ColumnDefinitions>
+                            <contr:ItemPanelRecipientList Grid.Column="0" />
+                            <contr:RecipientEditor Grid.Column="1"/>
+                        </Grid>
+                    </GroupBox>                    
                 </DockPanel>
             </TabItem>
             <TabItem Header="Планировщик">

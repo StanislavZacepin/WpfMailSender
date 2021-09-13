@@ -8,6 +8,7 @@ using System.Windows;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using TestWpfMailSender.Infrastructure;
 using TestWpfMailSender.Infrastructure.Services;
 using TestWpfMailSender.Infrastructure.Services.InMemory;
 using TestWpfMailSender.Models;
@@ -29,39 +30,26 @@ namespace TestWpfMailSender
 
         public static IServiceProvider Services => Hosting.Services;
 
-        public static IHostBuilder CreateHostBuilder(string[] Args) => Host
-           .CreateDefaultBuilder(Args)
-           .ConfigureAppConfiguration(opt => opt.AddJsonFile("settings.json", true, true))
-           .ConfigureLogging(opt => opt.AddDebug())
+        public static IHostBuilder CreateHostBuilder(string[] Args) => 
+            Host.CreateDefaultBuilder(Args)
+           .ConfigureAppConfiguration(opt => opt.AddJsonFile("appsettings.json", false, true))
            .ConfigureServices(ConfigureServices)
         ;
 
         private static void ConfigureServices(HostBuilderContext host, IServiceCollection services)
         {
-            services.AddSingleton<MainWindowViewModel>();
+            services.AddSingleton<MainWindowViewModel>();         
+            services.AddSingleton<StatisticViewModel>();         
+                       
+
+            services.AddSingleton<IRepository<Server>, ServersRepository>();
+            services.AddSingleton<IRepository<Sender>, SendersRepository>();
+            services.AddSingleton<IRepository<Recipient>, RecipientsRepository>();
+            services.AddSingleton<IRepository<Message>, MessagesRepository>();
+
             services.AddSingleton<IStatistic, InMemoryStatisticService>();
-
             services.AddSingleton<IMailService, DebugMailService>();
-
-            services.AddSingleton<IRepository<Server>, InMemoryServersRepository>();
-            services.AddSingleton<IRepository<Sender>, InMemorySendersRepository>();
-            services.AddSingleton<IRepository<Recipient>, InMemoryRecipientsRepository>();
-            services.AddSingleton<IRepository<Message>, InMemoryMessagesRepository>();
         }
-
-        protected override void OnStartup(StartupEventArgs e)
-        {
-            Hosting.Start();
-            base.OnStartup(e);
-
-            //var services = new ServiceCollection();
-            //services.AddScoped<MainWindowViewModel>();
-        }
-
-        protected override void OnExit(ExitEventArgs e)
-        {
-            base.OnExit(e);
-            Hosting.Dispose();
-        }
+       
     }
 }

@@ -8,6 +8,7 @@
              xmlns:data="clr-namespace:TestWpfMailSender.Data"
              xmlns:fontawesome="http://schemas.fontawesome.com/icons/"
              mc:Ignorable="d" 
+             DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
              d:DesignHeight="27" d:DesignWidth="385">
     <!-- DataContext="{Binding RelativeSource={RelativeSource self}}"> Один вид привязки-->
     <DockPanel>
@@ -35,10 +36,9 @@
                 ToolTip="Удалить" fontawesome:Awesome.Content="Solid_Trashalt" Foreground="DarkRed"/>
         </StackPanel>
         <ComboBox SelectedIndex="0" VerticalAlignment="Center" MinWidth="200" MaxWidth="220"
-           ItemsSource="{Binding ItemSource, RelativeSource={RelativeSource AncestorType=local:ItemPanelSender}}"
-           SelectedItem="{Binding SelectedItem, RelativeSource={RelativeSource AncestorType=local:ItemPanelSender}}"
-           ItemTemplate="{Binding ItemTemplate, RelativeSource={RelativeSource AncestorType=local:ItemPanelSender}}" 
-           DisplayMemberPath="{Binding DisplayMemberPath, RelativeSource={RelativeSource AncestorType=local:ItemPanelSender}}"/>    
+           ItemsSource="{Binding Senders}"
+           SelectedItem="{Binding SelectedSender}"          
+         />    
 
     </DockPanel>
 </UserControl>

@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:TestWpfMailSender.Controls"
              xmlns:fontawesome="http://schemas.fontawesome.com/icons/"
              xmlns:data="clr-namespace:TestWpfMailSender.Data"
-             
+             DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
              mc:Ignorable="d" 
              d:DesignHeight="27" d:DesignWidth="385">
     <DockPanel>
@@ -31,16 +31,9 @@
             <Button ToolTip="Удалить" fontawesome:Awesome.Content="Solid_Trashalt" Foreground="DarkRed" />
         </StackPanel>
         <ComboBox SelectedIndex="0" VerticalAlignment="Center" Margin="6.5,0,0,0" MinWidth="200"  MaxWidth="220"
-                                      ItemsSource="{x:Static data:TestData.Recipients}">
-            <ComboBox.ItemTemplate>
-                <DataTemplate DataType="model:Recipient">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Name}"/>
-                        <TextBlock Text=":"/>
-                        <TextBlock Text="{Binding RecipientAdress}" Margin="3,0,0,0" Opacity="0.6" FontSize="10"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
+                  ItemsSource="{Binding Recipients}"
+                  SelectedItem="{Binding SelectedRecipient}"
+                  >            
         </ComboBox>
     </DockPanel>
 </UserControl>

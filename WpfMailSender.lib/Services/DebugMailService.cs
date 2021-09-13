@@ -12,7 +12,7 @@ namespace WpfMailSender.lib.Services
         public void SendEmail(string From, string To, string Title, string Body)
         {
             Debug.WriteLine($"Отправка почты от {From} к {To}: {Title} - {Body}");
-            _Statistic.MessageSended();
+            _Statistic.MailSended();
         }
     }
 }

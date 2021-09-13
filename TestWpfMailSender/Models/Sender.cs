@@ -12,6 +12,7 @@ namespace TestWpfMailSender.Models
         public string Name { get; set; }
         public string SenderAdress { get; set; }
 
-        
+        public override string ToString() => $"{Name}: {SenderAdress}";
+
     }
 }

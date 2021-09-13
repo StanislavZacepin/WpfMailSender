@@ -18,13 +18,13 @@ namespace TestWpfMailSender.Infrastructure.Services
         public event EventHandler SendedMailsCountChanged;
 
         public int SendersCount => TestData.Senders.Count;
-
         public int RecipientsCount => TestData.Recipients.Count;
+
 
         private readonly Stopwatch _Timer = Stopwatch.StartNew();
         public TimeSpan UpTime => _Timer.Elapsed;
 
-        public void MessageSended()
+        public void MailSended()
         {
             _SendedMailsCount++;
             SendedMailsCountChanged?.Invoke(this, EventArgs.Empty);

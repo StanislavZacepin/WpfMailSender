@@ -20,11 +20,13 @@
             <Button Content="Сохранениу данных" Margin="3,0" Padding="20,3"/>
         </UniformGrid>
         <GroupBox Margin="3" Header="{Binding Title, RelativeSource={RelativeSource AncestorType=local:ItemPanelRecipientList}}">
-            <DataGrid Margin="5,0" AutoGenerateColumns="False" IsReadOnly="False"
-                                  GridLinesVisibility="Vertical" 
-                                  VerticalGridLinesBrush="DarkBlue"
-                                  AlternatingRowBackground="#FFA7A7F5"
-                                  ItemsSource="{Binding Recipients}">
+            <DataGrid Margin="5,0" AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      GridLinesVisibility="Vertical" 
+                      VerticalGridLinesBrush="DarkBlue"
+                      AlternatingRowBackground="#FFA7A7F5"
+                      ItemsSource="{Binding Recipients}"
+                      SelectedItem="{Binding SelectedRecipient}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" MinWidth="30"/>
                     <DataGridTextColumn Header="Имя" MinWidth="100" Binding="{Binding Name}"/>
