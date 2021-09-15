@@ -30,7 +30,7 @@
             <Button ToolTip="Редактировать" fontawesome:Awesome.Content="Solid_Edit" Foreground="Orange"/>
             <Button ToolTip="Удалить" fontawesome:Awesome.Content="Solid_Trashalt" Foreground="DarkRed" />
         </StackPanel>
-        <ComboBox SelectedIndex="0" VerticalAlignment="Center" Margin="6.5,0,0,0" MinWidth="200"  MaxWidth="220"
+        <ComboBox SelectedIndex="0" VerticalAlignment="Center" Margin="6.5,0,0,0" MinWidth="230"  MaxWidth="230"
                   ItemsSource="{Binding Recipients}"
                   SelectedItem="{Binding SelectedRecipient}"
                   >            

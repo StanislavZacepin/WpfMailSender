@@ -24,5 +24,17 @@ namespace TestWpfMailSender.Controls
         {
             InitializeComponent();
         }
+
+        private void OnNameValidationError(object Sender, ValidationErrorEventArgs E)
+        {
+            if(E.Action == ValidationErrorEventAction.Added)
+            {
+                ((Control)Sender).ToolTip = E.Error.ErrorContent.ToString();
+            }
+            else
+            {
+                ((Control)Sender).ClearValue(ToolTipProperty );
+            }
+        }
     }
 }

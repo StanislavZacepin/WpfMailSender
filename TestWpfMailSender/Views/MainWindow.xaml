@@ -8,15 +8,15 @@
         xmlns:mwvm="clr-namespace:TestWpfMailSender.ViewModels"
         xmlns:local="clr-namespace:TestWpfMailSender"  mc:Ignorable="d"
         xmlns:contr="clr-namespace:TestWpfMailSender.Controls"
-        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"        
+        xmlns:behav="http://schemas.microsoft.com/xaml/behaviors"        
         Title="{Binding Title}" 
         DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
         Height="450" MinWidth="670" Width="800">
-    <i:Interaction.Triggers>
-        <i:EventTrigger EventName="Loaded">
-            <i:InvokeCommandAction Command="{Binding LoadDataCommand}"/>
-        </i:EventTrigger>
-    </i:Interaction.Triggers>
+    <behav:Interaction.Triggers>
+        <behav:EventTrigger EventName="Loaded">
+            <behav:InvokeCommandAction Command="{Binding LoadDataCommand}"/>
+        </behav:EventTrigger>
+    </behav:Interaction.Triggers>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">

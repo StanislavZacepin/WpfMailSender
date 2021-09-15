@@ -34,7 +34,7 @@
                     CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource AncestorType=local:ItemPanelServers}}"
                 ToolTip="Удалить" fontawesome:Awesome.Content="Solid_TrashAlt" Foreground="DarkRed" />
         </StackPanel>
-        <ComboBox  MinWidth="200" MaxWidth="220" Margin="30,0,18,0" SelectedIndex="0"
+        <ComboBox  MinWidth="230" MaxWidth="230" Margin="30,0,0,0" SelectedIndex="0"
                    ItemsSource="{Binding Servers}"
                    SelectedItem="{Binding SelectedServer}"                  
                    >

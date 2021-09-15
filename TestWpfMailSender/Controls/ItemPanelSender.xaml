@@ -35,7 +35,7 @@
                     CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource AncestorType=local:ItemPanelSender}}"
                 ToolTip="Удалить" fontawesome:Awesome.Content="Solid_Trashalt" Foreground="DarkRed"/>
         </StackPanel>
-        <ComboBox SelectedIndex="0" VerticalAlignment="Center" MinWidth="200" MaxWidth="220"
+        <ComboBox SelectedIndex="0" VerticalAlignment="Center" MinWidth="230" MaxWidth="230"
            ItemsSource="{Binding Senders}"
            SelectedItem="{Binding SelectedSender}"          
          />    
