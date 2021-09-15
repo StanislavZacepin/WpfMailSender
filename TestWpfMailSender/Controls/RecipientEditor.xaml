@@ -31,7 +31,8 @@
         <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding SelectedRecipient.Id }" IsReadOnly="True"/>
 
         <TextBlock Grid.Column="0" Grid.Row="1" Text="Имя:"/>
-        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding SelectedRecipient.Name, NotifyOnValidationError=True}"
+        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding SelectedRecipient.Name, NotifyOnValidationError=True, ValidatesOnExceptions=True
+            , ValidatesOnDataErrors=True}"
                  Validation.Error="OnNameValidationError"/>
 
         <TextBlock Grid.Column="0" Grid.Row="2" Text="Адрес:"/>

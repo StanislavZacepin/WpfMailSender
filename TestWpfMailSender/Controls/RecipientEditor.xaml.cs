@@ -33,7 +33,7 @@ namespace TestWpfMailSender.Controls
             }
             else
             {
-                ((Control)Sender).ClearValue(ToolTipProperty );
+                ((Control)Sender).ClearValue(ToolTipProperty);
             }
         }
     }
