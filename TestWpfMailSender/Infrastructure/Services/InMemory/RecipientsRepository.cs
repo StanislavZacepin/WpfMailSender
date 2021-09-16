@@ -4,7 +4,7 @@ using TestWpfMailSender.Models;
 
 namespace TestWpfMailSender.Infrastructure.Services.InMemory
 {
-    class RecipientsRepository : RepositoryInMemory<Recipient>
+   public class RecipientsRepository : RepositoryInMemory<Recipient>
     {
         public RecipientsRepository(): base(Enumerable.Range(1, 10)
            .Select(i => new Recipient
