@@ -11,6 +11,7 @@
              DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
              d:DesignHeight="27" d:DesignWidth="385">
     <DockPanel>
+        
         <TextBlock Text="{Binding Title, RelativeSource={RelativeSource AncestorType=local:ItemPanelServers}}" VerticalAlignment="Center" Margin="6,0"/>
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
             <StackPanel.Resources>

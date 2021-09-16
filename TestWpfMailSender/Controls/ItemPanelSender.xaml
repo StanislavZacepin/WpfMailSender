@@ -12,6 +12,7 @@
              d:DesignHeight="27" d:DesignWidth="385">
     <!-- DataContext="{Binding RelativeSource={RelativeSource self}}"> Один вид привязки-->
     <DockPanel>
+       
         <TextBlock Text="{Binding Title, RelativeSource={RelativeSource AncestorType=local:ItemPanelSender}}" VerticalAlignment="Center" Margin="5,0"/>
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
             <StackPanel.Resources>

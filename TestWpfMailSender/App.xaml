@@ -7,9 +7,11 @@
              xmlns:converters="clr-namespace:TestWpfMailSender.Infrastructure.Convertes"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
-        <mwvm:ViewModelLocator x:Key="Locator"/>
         
-        <comands:CloseAppCommand x:Key="CloseAppCommand"/>
-        <converters:DebugConverter x:Key="DebugConverter"/>
+            <mwvm:ViewModelLocator x:Key="Locator"/>
+            <comands:CloseAppCommand x:Key="CloseAppCommand"/>
+            <converters:DebugConverter x:Key="DebugConverter"/>
+           
+        
     </Application.Resources>
 </Application>

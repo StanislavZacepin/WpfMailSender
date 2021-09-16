@@ -30,5 +30,10 @@ namespace TestWpfMailSender
         {
             Close();
         }
+
+        private void ItemPanelRecipient_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

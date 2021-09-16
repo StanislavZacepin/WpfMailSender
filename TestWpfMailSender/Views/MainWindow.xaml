@@ -18,6 +18,13 @@
         </behav:EventTrigger>
     </behav:Interaction.Triggers>
     <DockPanel>
+        <DockPanel.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="Theme.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </DockPanel.Resources>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">
                 <MenuItem Header="Окрыть"/>
@@ -41,29 +48,29 @@
         <TabControl>
             <TabItem Header="Списки">
                 <DockPanel>
-                    <ToolBarTray DockPanel.Dock="Top">
-                        <ToolBar Band="0">
+                    <ToolBarTray DockPanel.Dock="Top" Background="#FF464849">
+                        <ToolBar Band="0" BandIndex="0">
                             <contr:ItemPanelServers Title="Сервер" />
                         </ToolBar>
-                        <ToolBar Band="1">
+                        <ToolBar Band="1" BandIndex="0">
                             <contr:ItemPanelSender Title="Отправитель"/>
                         </ToolBar>
-                        <ToolBar Band="2" BandIndex="1" >
+                        <ToolBar Band="2" BandIndex="0" >
                             <contr:ItemPanelRecipient Title="Получатель"/>
-                        </ToolBar>
-                        <ToolBar >
-                            <TextBlock VerticalAlignment="Center" Text="Перейти в Планировщик"/>
+                        </ToolBar>                     
+                        <ToolBar Band="0" BandIndex="1"  >
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Перейти в Планировщик"/>
                             <Button ToolTip="Перейти" fontawesome:Awesome.Content="Regular_Clock" Foreground="DarkBlue" Margin="5,0,0,0"/>
                         </ToolBar>
-                        <ToolBar Band="1">
+                        <ToolBar Band="1"  BandIndex="1">
                             <TextBlock VerticalAlignment="Center" Text="Перейти в письма"/>
                             <Button ToolTip="Перейти" fontawesome:Awesome.Content="Solid_MailBulk" Foreground="DarkBlue" Margin="44,0,0,0"/>
                         </ToolBar>
-                        <ToolBar Band="2" BandIndex="2" Margin="1,0,0,0">
+                        <ToolBar Band="2" BandIndex="1" Margin="1,0,0,0">
                             <TextBlock VerticalAlignment="Center" Text="Перейти к статистике"/>
-                            <Button ToolTip="Перейти" fontawesome:Awesome.Content="Brands_Telegram"  Foreground="DarkBlue" Margin="28,0,0,0"/>
-                        </ToolBar>
-                    </ToolBarTray>
+                            <Button ToolTip="Перейти" fontawesome:Awesome.Content="Brands_Telegram"  Foreground="DarkBlue" Margin="26,0,0,0"/>
+                        </ToolBar>                   
+                    </ToolBarTray>                    
                     <GroupBox Header="Список получателей" Margin="3">
                         <Grid>
                             <Grid.ColumnDefinitions>

@@ -19,7 +19,7 @@
                    FontWeight="Bold" FontSize="20"/>
         <DockPanel DockPanel.Dock="Top" Margin="5,3">
             <TextBlock Text="Фильтр: "/>
-            <TextBox/>
+            <TextBox Background="White"/>
         </DockPanel>
         <UniformGrid DockPanel.Dock="Bottom" Rows="1" HorizontalAlignment="Center" Margin="3">
             <Button Command="{Binding LoadDataCommand}" Content="Загрузка данных" Margin="3,0" Padding="20,3"/>

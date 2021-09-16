@@ -14,7 +14,7 @@ namespace TestWpfMailSender.Models
             set
             {
                 if (string.IsNullOrEmpty(value))
-                    throw new ArgumentException("Не задано имя!");
+                     new ArgumentException("Не задано имя!");
 
                 _Name = value;
             }
