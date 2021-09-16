@@ -10,8 +10,13 @@ namespace WpfMailSender.lib.Services
    public static class TextEncoder
     {
         public static string Encode(string str, int key = 1)
-            => new string(str.Select(c => (char)(c + key)).ToArray());
+        {
+            return new string(str.Select(c => (char)(c + key)).ToArray());
+        }
 
-        public static string Decode(string str, int key = 1) => Encode(str, -key);
+        public static string Decode(string str, int key = 1)
+        {
+            return Encode(str, -key);
+        }
     }
 }
