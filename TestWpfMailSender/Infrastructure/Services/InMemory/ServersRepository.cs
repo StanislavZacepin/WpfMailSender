@@ -7,7 +7,7 @@ using WpfMailSender.lib.Services;
 
 namespace TestWpfMailSender.Infrastructure.Services.InMemory
 {
-    class ServersRepository : RepositoryInMemory<Server>
+   public class ServersRepository : RepositoryInMemory<Server>
     {
         public ServersRepository() : base(Enumerable.Range(1, 10)
             .Select(i => new Server

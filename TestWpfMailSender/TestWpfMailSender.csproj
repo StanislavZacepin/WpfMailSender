@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resurce\volk.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="FontAwesome5" Version="2.1.4" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.31" />
@@ -18,12 +14,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WpfMailSender.lib\WpfMailSender.lib.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Resurce\volk.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
   </ItemGroup>
 
   <ItemGroup>
