@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using WpfMailSender.lib.Interfaces;
 
@@ -51,6 +52,20 @@ namespace WpfMailSender.lib
                 }
             };
             client.Send(message);
+
+        }
+
+        public void Send(string SenderAddress, IEnumerable<string> RecipientsAddress, string Subject, string Body)
+        {
+            foreach (var recipient_address in RecipientsAddress)
+                Send(SenderAddress, recipient_address, Subject, Body);
+           
+        }
+        public void SendParallel(string SenderAddress, IEnumerable<string> RecipientsAddress, string Subject, string Body)
+        {
+            foreach (var recipient_address in RecipientsAddress)
+                ThreadPool.QueueUserWorkItem(_ => 
+                Send(SenderAddress, recipient_address, Subject, Body));
 
         }
     }

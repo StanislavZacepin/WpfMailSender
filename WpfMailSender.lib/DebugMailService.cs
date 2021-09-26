@@ -36,5 +36,17 @@ namespace WpfMailSender.lib
         {
             Debug.WriteLine("Отправка почты ...");
         }
+        public void Send(string SenderAddress, IEnumerable<string> RecipientsAddress, string Subject, string Body)
+        {
+            foreach (var recipient_address in RecipientsAddress)
+                Send(SenderAddress, recipient_address, Subject, Body);
+
+        }
+        public void SendParallel(string SenderAddress, IEnumerable<string> RecipientsAddress, string Subject, string Body)
+        {
+            foreach (var recipient_address in RecipientsAddress)
+                Send(SenderAddress, recipient_address, Subject, Body);
+
+        }
     }
 }
