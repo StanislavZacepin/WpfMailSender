@@ -1,11 +1,7 @@
-п»їusing System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Controls;
+
 
 namespace TestWpfMailSender.Infrastructure.ValidationRules
 {
@@ -28,9 +24,9 @@ namespace TestWpfMailSender.Infrastructure.ValidationRules
                 return AllowNull
                     ? ValidationResult.ValidResult
                     : new ValidationResult
-                    (false, ErrorMessage ?? $"РЎС‚СЂРѕРєР° РЅРµ СѓРґРѕРІР»РµС‚РІРѕСЂСЏРµС‚ С‚СЂРµР±РѕРІР°РЅРёСЋ {Pattern}");
+                    (false, ErrorMessage ?? $"Строка не удовлетворяет требованию {Pattern}");
 
-            if(_Regex is null) return ValidationResult.ValidResult;
+            if (_Regex is null) return ValidationResult.ValidResult;
 
             if (value is not string str)
                 str = value.ToString();
@@ -38,7 +34,10 @@ namespace TestWpfMailSender.Infrastructure.ValidationRules
             return _Regex.IsMatch(str)
                 ? ValidationResult.ValidResult
                 : new ValidationResult
-                (false, ErrorMessage ?? $"РЎС‚СЂРѕРєР° РЅРµ СѓРґРѕРІР»РµС‚РІРѕСЂСЏРµС‚ С‚СЂРµР±РѕРІР°РЅРёСЋ {Pattern}");
+                (false, ErrorMessage ?? $"Строка не удовлетворяет требованию {Pattern}");
+
+        }
+        
         }
     }
-}
+

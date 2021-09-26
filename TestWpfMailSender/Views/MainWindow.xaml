@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fontawesome="http://schemas.fontawesome.com/icons/"
+        xmlns:vr="clr-namespace:TestWpfMailSender.Infrastructure.ValidationRules"
         xmlns:data="clr-namespace:TestWpfMailSender.Data"    
         xmlns:mwvm="clr-namespace:TestWpfMailSender.ViewModels"
         xmlns:local="clr-namespace:TestWpfMailSender"  mc:Ignorable="d"
@@ -92,9 +93,18 @@
                     <GroupBox MinWidth="200" Grid.Column="0" Header="Управление" >
                         <StackPanel>
                             <TextBlock HorizontalAlignment="Center" Margin="0,5,0,0" Text="Дата" />                            
-                            <Calendar/>
+                            <Calendar>
+                                <Calendar.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFE4EAF0"/>
+                                        <GradientStop Color="#FFECF0F4" Offset="0.16"/>
+                                        <GradientStop Color="#FFFCFCFD" Offset="0.16"/>
+                                        <GradientStop Color="#FF9E9E9E" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Calendar.Background>
+                            </Calendar>
                             <TextBlock HorizontalAlignment="Center" Margin="0,5,0,0" Text="Время" />
-                            <TextBox Margin="10,0" />
+                            <TextBox Margin="10,0" Background="#FFCBC6C6"/>
                             <StackPanel Margin="5,7">
                                 <StackPanel.Resources>
                                     <Style TargetType="Button">
@@ -102,9 +112,9 @@
                                         <Setter Property="Background" Value="White"/>
                                     </Style>
                                 </StackPanel.Resources>
-                                <Button Content="Отправить"/>
-                                <Button Content="Заплонировать"/>
-                                <Button Content="Удалить"/>
+                                <Button Background="Black" Content="Отправить" Foreground="White"/>
+                                <Button Background="Black" Content="Заплонировать" Foreground="White"/>
+                                <Button Background="Black" Content="Удалить" Foreground="White"/>
                             </StackPanel>
                         </StackPanel>
                     </GroupBox>

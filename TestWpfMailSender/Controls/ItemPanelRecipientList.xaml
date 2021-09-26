@@ -19,14 +19,14 @@
                    FontWeight="Bold" FontSize="20"/>
         <DockPanel DockPanel.Dock="Top" Margin="5,3">
             <TextBlock Text="Фильтр: "/>
-            <TextBox Background="White"/>
+            <TextBox Background="#FFCBC6C6"/>
         </DockPanel>
         <UniformGrid DockPanel.Dock="Bottom" Rows="1" HorizontalAlignment="Center" Margin="3">
             <Button Command="{Binding LoadDataCommand}" Content="Загрузка данных" Margin="3,0" Padding="20,3"/>
             <Button Content="Сохранениу данных" Margin="3,0" Padding="20,3"/>
         </UniformGrid>
         <GroupBox Margin="3" Header="{Binding Title, RelativeSource={RelativeSource AncestorType=local:ItemPanelRecipientList}}">
-            <DataGrid Margin="5,0" AutoGenerateColumns="False"
+            <DataGrid Background="#FFCBC6C6" Margin="5,0" AutoGenerateColumns="False"
                       IsReadOnly="True"
                       GridLinesVisibility="Vertical" 
                       VerticalGridLinesBrush="DarkBlue"
