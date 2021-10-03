@@ -5,9 +5,11 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using TestWpfMailSender.Data;
 using TestWpfMailSender.Infrastructure;
 using TestWpfMailSender.Infrastructure.Services;
 using TestWpfMailSender.Infrastructure.Services.InMemory;
@@ -39,6 +41,8 @@ namespace TestWpfMailSender
 
         private static void ConfigureServices(HostBuilderContext host, IServiceCollection services)
         {
+            services.AddDbContext<MailSenderDB>(opt => opt.UseSqlServer(host.Configuration.GetConnectionString("SqlServer")));
+
             services.AddSingleton<MainWindowViewModel>();         
             services.AddSingleton<StatisticViewModel>();         
                        
