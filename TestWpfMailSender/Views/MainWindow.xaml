@@ -7,6 +7,7 @@
         xmlns:vr="clr-namespace:TestWpfMailSender.Infrastructure.ValidationRules"
         xmlns:data="clr-namespace:TestWpfMailSender.Data"    
         xmlns:mwvm="clr-namespace:TestWpfMailSender.ViewModels"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:TestWpfMailSender"  mc:Ignorable="d"
         xmlns:contr="clr-namespace:TestWpfMailSender.Controls"
         xmlns:behav="http://schemas.microsoft.com/xaml/behaviors"        
@@ -104,7 +105,8 @@
                                 </Calendar.Background>
                             </Calendar>
                             <TextBlock HorizontalAlignment="Center" Margin="0,5,0,0" Text="Время" />
-                            <TextBox Margin="10,0" Background="#FFCBC6C6"/>
+                            <xctk:TimePicker Margin="5,0" Background="#FFCBC6C6"/>
+                            <!--<TextBox Margin="10,0" Background="#FFCBC6C6"/>-->
                             <StackPanel Margin="5,7">
                                 <StackPanel.Resources>
                                     <Style TargetType="Button">
