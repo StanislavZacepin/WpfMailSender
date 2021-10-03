@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 using TestWpfMailSender.Infrastructure.Services.InMemory;
-using TestWpfMailSender.Models;
+using WpfMailSender.lib.Entities;
 using WpfMailSender.lib.Services;
 
 namespace TestWpfMailSender.Test.Infrastructure.Services.InMemory

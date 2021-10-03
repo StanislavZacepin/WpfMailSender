@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TestWpfMailSender.Models;
+using WpfMailSender.lib.Entities;
 using WpfMailSender.lib.Services;
 
 namespace TestWpfMailSender.Data
 {
-   internal class TestData
+    internal class TestData
     {
         static Random random = new Random();
         public static List<Server> Servers { get; } = Enumerable.Range(1, 10)

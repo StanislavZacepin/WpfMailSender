@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TestWpfMailSender.Models.Base;
+using WpfMailSender.lib.Entities.Base;
 
-namespace TestWpfMailSender.Models
+namespace WpfMailSender.lib.Entities
 {
     public class Sender : Entity
     {

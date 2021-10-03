@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestWpfMailSender.Models.Base
+namespace WpfMailSender.lib.Entities.Base
 {
-   public abstract class Entity
+    public abstract class Entity
     {
         public int Id { get; set; }
     }

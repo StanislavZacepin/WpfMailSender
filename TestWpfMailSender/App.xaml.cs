@@ -13,9 +13,9 @@ using TestWpfMailSender.Data;
 using TestWpfMailSender.Infrastructure;
 using TestWpfMailSender.Infrastructure.Services;
 using TestWpfMailSender.Infrastructure.Services.InMemory;
-using TestWpfMailSender.Models;
 using TestWpfMailSender.ViewModels;
 using WpfMailSender.lib;
+using WpfMailSender.lib.Entities;
 using WpfMailSender.lib.Interfaces;
 using WpfMailSender.lib.Services;
 

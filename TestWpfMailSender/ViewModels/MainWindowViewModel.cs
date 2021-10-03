@@ -6,11 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using TestWpfMailSender.Infrastructure.Services;
 using TestWpfMailSender.Infrastructure.Services.InMemory;
-using TestWpfMailSender.Models;
-using TestWpfMailSender.Models.Base;
 using WpfMailSender.lib.Commands;
+using WpfMailSender.lib.Entities;
+using WpfMailSender.lib.Entities.Base;
 using WpfMailSender.lib.Interfaces;
 using WpfMailSender.lib.ViewModels.Base;
 

@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TestWpfMailSender.Models.Base;
+using WpfMailSender.lib.Entities.Base;
+using WpfMailSender.lib.Interfaces;
 
 namespace TestWpfMailSender.Infrastructure.Services.InMemory
 {
-   public abstract class RepositoryInMemory<T> : IRepository<T> where T : Entity
+    public abstract class RepositoryInMemory<T> : IRepository<T> where T : Entity
     {
 
         private readonly List<T> _Items;

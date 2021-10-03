@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using TestWpfMailSender.Models;
+using WpfMailSender.lib.Entities;
 
 namespace TestWpfMailSender.Infrastructure.Services.InMemory
 {
-   public class MessagesRepository : RepositoryInMemory<Message>
+    public class MessagesRepository : RepositoryInMemory<Message>
     {
         public MessagesRepository() : base(Enumerable.Range(1, 10)
            .Select(i => new Message

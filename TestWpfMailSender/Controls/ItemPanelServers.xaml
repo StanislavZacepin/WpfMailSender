@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:data="clr-namespace:TestWpfMailSender.Data"
-             xmlns:model="clr-namespace:TestWpfMailSender.Models"
+             xmlns:model="clr-namespace:WpfMailSender.lib.Entities;assembly=WpfMailSender.lib"
              xmlns:local="clr-namespace:TestWpfMailSender.Controls" 
              xmlns:fontawesome="http://schemas.fontawesome.com/icons/"
              mc:Ignorable="d" 
@@ -24,16 +24,16 @@
             </StackPanel.Resources>
             <Button Command="{Binding AddNewItemCoomand, RelativeSource={RelativeSource AncestorType=local:ItemPanelServers}}">
                 <StackPanel Orientation="Horizontal" >
-                    <fontawesome:ImageAwesome Height="12" Icon="Solid_PlusCircle" Foreground="DarkGreen" Margin="1,0,5,0" />
+                    <fontawesome:ImageAwesome Height="12" Icon="Solid_PlusCircle" Foreground="Green" Margin="1,0,5,0" />
                     <TextBlock Text="Добавить" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
             <Button Command="{Binding EditItemCoomand, RelativeSource={RelativeSource AncestorType=local:ItemPanelServers}}" 
                     CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource AncestorType=local:ItemPanelServers}}"
-                    ToolTip="Редактировать" fontawesome:Awesome.Content="Solid_Edit" Foreground="Orange"/>
+                    ToolTip="Редактировать" fontawesome:Awesome.Content="Solid_Edit" Foreground="Yellow"/>
             <Button Command="{Binding RemoveItemCoomand, RelativeSource={RelativeSource AncestorType=local:ItemPanelServers}}" 
                     CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource AncestorType=local:ItemPanelServers}}"
-                ToolTip="Удалить" fontawesome:Awesome.Content="Solid_TrashAlt" Foreground="DarkRed" />
+                ToolTip="Удалить" fontawesome:Awesome.Content="Solid_TrashAlt" Foreground="Red" />
         </StackPanel>
         <ComboBox  MinWidth="230" MaxWidth="230" Margin="30,0,0,0" SelectedIndex="0"
                    ItemsSource="{Binding Servers}"

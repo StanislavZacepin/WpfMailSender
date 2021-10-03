@@ -2,12 +2,12 @@
 using System.Text;
 using System.Threading.Tasks;
 using TestWpfMailSender.Infrastructure.Services.InMemory;
-using TestWpfMailSender.Models;
+using WpfMailSender.lib.Entities;
 using WpfMailSender.lib.Services;
 
 namespace TestWpfMailSender.Infrastructure.Services.InMemory
 {
-   public class ServersRepository : RepositoryInMemory<Server>
+    public class ServersRepository : RepositoryInMemory<Server>
     {
         public ServersRepository() : base(Enumerable.Range(1, 10)
             .Select(i => new Server

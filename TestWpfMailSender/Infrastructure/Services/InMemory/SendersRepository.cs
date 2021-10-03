@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using TestWpfMailSender.Models;
+using WpfMailSender.lib.Entities;
 
 namespace TestWpfMailSender.Infrastructure.Services.InMemory
 {

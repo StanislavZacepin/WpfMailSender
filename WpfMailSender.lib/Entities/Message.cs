@@ -1,6 +1,6 @@
-﻿using TestWpfMailSender.Models.Base;
+﻿using WpfMailSender.lib.Entities.Base;
 
-namespace TestWpfMailSender.Models
+namespace WpfMailSender.lib.Entities
 {
     public class Message : Entity
     {

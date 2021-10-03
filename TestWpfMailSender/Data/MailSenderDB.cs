@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TestWpfMailSender.Models;
+using WpfMailSender.lib.Entities;
 
 namespace TestWpfMailSender.Data
 {

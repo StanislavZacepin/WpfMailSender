@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TestWpfMailSender.Infrastructure.Services.InMemory;
-using TestWpfMailSender.Models;
+using WpfMailSender.lib.Entities;
 
 namespace TestWpfMailSender.Test.Infrastructure.Services.InMemory
 {

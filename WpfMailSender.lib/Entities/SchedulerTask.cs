@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TestWpfMailSender.Models.Base;
+using WpfMailSender.lib.Entities.Base;
 
-namespace TestWpfMailSender.Models
+namespace WpfMailSender.lib.Entities
 {
     // для планировщика
     public class SchedulerTask : Entity
@@ -16,7 +16,7 @@ namespace TestWpfMailSender.Models
         public Server Server { get; set; }// сервер который надо будет отправить что нибудь
         [Required]
         public Sender Sender { get; set; }
-        
+
         public ICollection<Recipient> Recipient { get; set; }
         [Required]
         public Message Message { get; set; }
