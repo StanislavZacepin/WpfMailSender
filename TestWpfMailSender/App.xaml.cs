@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using TestWpfMailSender.Data;
 using TestWpfMailSender.Infrastructure;
 using TestWpfMailSender.Infrastructure.Services;
+using TestWpfMailSender.Infrastructure.Services.InDatabase;
 using TestWpfMailSender.Infrastructure.Services.InMemory;
 using TestWpfMailSender.ViewModels;
 using WpfMailSender.lib;
@@ -44,13 +45,25 @@ namespace TestWpfMailSender
             services.AddDbContext<MailSenderDB>(opt => opt.UseSqlServer(host.Configuration.GetConnectionString("SqlServer")));
 
             services.AddSingleton<MainWindowViewModel>();         
-            services.AddSingleton<StatisticViewModel>();         
-                       
+            services.AddSingleton<StatisticViewModel>();
 
-            services.AddSingleton<IRepository<Server>, ServersRepository>();
-            services.AddSingleton<IRepository<Sender>, SendersRepository>();
-            services.AddSingleton<IRepository<Recipient>, RecipientsRepository>();
-            services.AddSingleton<IRepository<Message>, MessagesRepository>();
+
+            #region репозиторий  Тест данных без sql базы данных
+            //services.AddSingleton<IRepository<Server>, ServersRepository>();
+            //services.AddSingleton<IRepository<Sender>, SendersRepository>();
+            //services.AddSingleton<IRepository<Recipient>, RecipientsRepository>();
+            //services.AddSingleton<IRepository<Message>, MessagesRepository>(); 
+            #endregion
+            #region Репозитории тест данных  с помощью Sql базы данных
+            //services.AddScoped<IRepository<Server>, DbRepository<Server>>();
+            //services.AddScoped<IRepository<Sender>, DbRepository<Sender>>();
+            //services.AddScoped<IRepository<Recipient>, DbRepository<Recipient>>();
+            //services.AddScoped<IRepository<Message>, DbRepository<Message>>();
+            //services.AddScoped<IRepository<SchedulerTask>, DbRepository<SchedulerTask>>(); 
+            
+            services.AddScoped(typeof(IRepository<>), typeof(DbRepository<>));
+            // Подставляет сущности автоматически. чтобы не писать каждую отдельно
+            #endregion
 
             services.AddSingleton<IStatistic, InMemoryStatisticService>();
 #if DEBUG
