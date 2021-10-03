@@ -43,6 +43,7 @@ namespace TestWpfMailSender
         private static void ConfigureServices(HostBuilderContext host, IServiceCollection services)
         {
             services.AddDbContext<MailSenderDB>(opt => opt.UseSqlServer(host.Configuration.GetConnectionString("SqlServer")));
+            services.AddTransient<DbInitializer>();
 
             services.AddSingleton<MainWindowViewModel>();         
             services.AddSingleton<StatisticViewModel>();
@@ -73,5 +74,15 @@ namespace TestWpfMailSender
 #endif
         }
 
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            using(var scope = Services.CreateScope())
+            {
+                var initializer = scope.ServiceProvider.GetRequiredService<DbInitializer>();
+                initializer.InitializerAsync().Wait();
+            }
+
+            base.OnStartup(e);
+        }
     }
 }
