@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using TestWpfMailSender.Models.Base;
 
 namespace TestWpfMailSender.Models
@@ -7,7 +8,7 @@ namespace TestWpfMailSender.Models
     public class Recipient : Entity, IDataErrorInfo
     {
         private string _Name;
-      
+        [Required]
         public string Name 
         {
             get => _Name;
@@ -19,6 +20,7 @@ namespace TestWpfMailSender.Models
                 _Name = value;
             }
         }
+        [Required]
         public string RecipientAdress { get; set; }
 
         string IDataErrorInfo.Error => null;
