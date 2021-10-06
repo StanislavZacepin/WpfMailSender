@@ -1,9 +1,17 @@
 ﻿<Application x:Class="TestWpfMailSender.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:TestWpfMailSender"
+             xmlns:mwvm="clr-namespace:TestWpfMailSender.ViewModels"
+             xmlns:comands="clr-namespace:WpfMailSender.lib.Commands;assembly=WpfMailSender.lib"
+             xmlns:local="clr-namespace:TestWpfMailSender" 
+             xmlns:converters="clr-namespace:TestWpfMailSender.Infrastructure.Convertes"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
-         
+        
+            <mwvm:ViewModelLocator x:Key="Locator"/>
+            <comands:CloseAppCommand x:Key="CloseAppCommand"/>
+            <converters:DebugConverter x:Key="DebugConverter"/>
+           
+        
     </Application.Resources>
 </Application>

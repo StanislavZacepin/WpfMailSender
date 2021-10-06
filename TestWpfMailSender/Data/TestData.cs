@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TestWpfMailSender.Models;
-using WpfMailSender.lib.Service;
+using WpfMailSender.lib.Entities;
+using WpfMailSender.lib.Services;
 
 namespace TestWpfMailSender.Data
 {
-   internal class TestData
+    internal class TestData
     {
         static Random random = new Random();
         public static List<Server> Servers { get; } = Enumerable.Range(1, 10)
@@ -24,21 +24,19 @@ namespace TestWpfMailSender.Data
             .ToList();
 
         public static List<Sender> Senders { get; }
-            = Enumerable.Range(1, 100)
+            = Enumerable.Range(1, 10)
             .Select(i => new Sender 
             {
                 Name=$"Отправитель-{i}",
                 SenderAdress=$"SendAdress-{i}",
-
             })
             .ToList();
         public static List<Recipient> Recipients { get; }
-           = Enumerable.Range(1, 100)
+           = Enumerable.Range(1, 10)
            .Select(i => new Recipient
            {
                Name = $"Получатель-{i}",
                RecipientAdress = $"RecipientAdress-{i}",
-
            })
            .ToList();
 

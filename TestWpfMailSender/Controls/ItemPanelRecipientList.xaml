@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="TestWpfMailSender.Controls.ItemPanelRecipientList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:behav="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:data="clr-namespace:TestWpfMailSender.Data"
+             xmlns:local="clr-namespace:TestWpfMailSender.Controls"
+             DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <behav:Interaction.Triggers>
+        <behav:EventTrigger EventName="Loaded">
+            <behav:InvokeCommandAction Command="{Binding LoadDataCommand}"/>
+        </behav:EventTrigger>
+    </behav:Interaction.Triggers>
+    <DockPanel Margin="3">
+        <TextBlock Text="Получатели" DockPanel.Dock="Top" HorizontalAlignment="Center"
+                   FontWeight="Bold" FontSize="20"/>
+        <DockPanel DockPanel.Dock="Top" Margin="5,3">
+            <TextBlock Text="Фильтр: "/>
+            <TextBox Background="#FFCBC6C6"/>
+        </DockPanel>
+        <UniformGrid DockPanel.Dock="Bottom" Rows="1" HorizontalAlignment="Center" Margin="3">
+            <Button Command="{Binding LoadDataCommand}" Content="Загрузка данных" Margin="3,0" Padding="20,3"/>
+            <Button Content="Сохранениу данных" Margin="3,0" Padding="20,3"/>
+        </UniformGrid>
+        <GroupBox Margin="3" Header="{Binding Title, RelativeSource={RelativeSource AncestorType=local:ItemPanelRecipientList}}">
+            <DataGrid Background="#FFCBC6C6" Margin="5,0" AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      GridLinesVisibility="Vertical" 
+                      VerticalGridLinesBrush="DarkBlue"
+                      AlternatingRowBackground="#FFA7A7F5"
+                      ItemsSource="{Binding Recipients}"
+                      SelectedItem="{Binding SelectedRecipient}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" MinWidth="30"/>
+                    <DataGridTextColumn Header="Имя" MinWidth="100" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="Адрес" MinWidth="150" Binding="{Binding RecipientAdress}"/>
+                    <DataGridTextColumn Header="Описание" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+    </DockPanel>
+</UserControl>

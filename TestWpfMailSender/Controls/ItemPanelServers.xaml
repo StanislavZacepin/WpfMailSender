@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="TestWpfMailSender.Controls.ItemPanelServers"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:data="clr-namespace:TestWpfMailSender.Data"
+             xmlns:model="clr-namespace:WpfMailSender.lib.Entities;assembly=WpfMailSender.lib"
+             xmlns:local="clr-namespace:TestWpfMailSender.Controls" 
+             xmlns:fontawesome="http://schemas.fontawesome.com/icons/"
+             mc:Ignorable="d" 
+             DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
+             d:DesignHeight="27" d:DesignWidth="385">
+    <DockPanel>
+        
+        <TextBlock Text="{Binding Title, RelativeSource={RelativeSource AncestorType=local:ItemPanelServers}}" VerticalAlignment="Center" Margin="6,0"/>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Padding" Value="4,0"/>
+                    <Setter Property="Margin" Value="1,0"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+            </StackPanel.Resources>
+            <Button Command="{Binding AddNewItemCoomand, RelativeSource={RelativeSource AncestorType=local:ItemPanelServers}}">
+                <StackPanel Orientation="Horizontal" >
+                    <fontawesome:ImageAwesome Height="12" Icon="Solid_PlusCircle" Foreground="Green" Margin="1,0,5,0" />
+                    <TextBlock Text="Добавить" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding EditItemCoomand, RelativeSource={RelativeSource AncestorType=local:ItemPanelServers}}" 
+                    CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource AncestorType=local:ItemPanelServers}}"
+                    ToolTip="Редактировать" fontawesome:Awesome.Content="Solid_Edit" Foreground="Yellow"/>
+            <Button Command="{Binding RemoveItemCoomand, RelativeSource={RelativeSource AncestorType=local:ItemPanelServers}}" 
+                    CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource AncestorType=local:ItemPanelServers}}"
+                ToolTip="Удалить" fontawesome:Awesome.Content="Solid_TrashAlt" Foreground="Red" />
+        </StackPanel>
+        <ComboBox  MinWidth="230" MaxWidth="230" Margin="30,0,0,0" SelectedIndex="0"
+                   ItemsSource="{Binding Servers}"
+                   SelectedItem="{Binding SelectedServer}"                  
+                   >
+
+        </ComboBox>
+    </DockPanel>
+</UserControl>
