@@ -6,4 +6,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FontAwesome5" Version="2.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WpfMailSender.lib\WpfMailSender.lib.csproj" />
+  </ItemGroup>
+
 </Project>
