@@ -47,6 +47,7 @@ namespace TestWpfMailSender
 
             services.AddSingleton<MainWindowViewModel>();         
             services.AddSingleton<StatisticViewModel>();
+            services.AddScoped<SchedulerViewModel>();
 
 
             #region репозиторий  Тест данных без sql базы данных
@@ -61,9 +62,11 @@ namespace TestWpfMailSender
             //services.AddScoped<IRepository<Recipient>, DbRepository<Recipient>>();
             //services.AddScoped<IRepository<Message>, DbRepository<Message>>();
             //services.AddScoped<IRepository<SchedulerTask>, DbRepository<SchedulerTask>>(); 
-            
-            services.AddScoped(typeof(IRepository<>), typeof(DbRepository<>));
-            // Подставляет сущности автоматически. чтобы не писать каждую отдельно
+
+            services.AddScoped(typeof(IRepository<>), typeof(DbRepository<>));  // Подставляет сущности автоматически. чтобы не писать каждую отдельно
+
+
+            services.AddScoped<IMailScheduler, MailSchedulerService>();
             #endregion
 
             services.AddSingleton<IStatistic, InMemoryStatisticService>();

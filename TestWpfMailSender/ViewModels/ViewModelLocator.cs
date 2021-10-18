@@ -19,5 +19,7 @@ namespace TestWpfMailSender.ViewModels
         }
 
         public StatisticViewModel Statistic => App.Services.GetRequiredService<StatisticViewModel>();
+
+        public SchedulerViewModel SchedulerModel => App.Services.GetRequiredService<SchedulerViewModel>();
     }
 }

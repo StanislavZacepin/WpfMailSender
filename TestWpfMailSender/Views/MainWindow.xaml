@@ -86,7 +86,7 @@
                 </DockPanel>
             </TabItem>
             <TabItem Header="Планировщик">
-                <Grid>
+                <Grid DataContext="{Binding SchedulerModel, Source={StaticResource Locator}}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition />                       
@@ -114,7 +114,8 @@
                                         <Setter Property="Background" Value="White"/>
                                     </Style>
                                 </StackPanel.Resources>
-                                <Button Background="Black" Content="Отправить" Foreground="White"/>
+                                <!--<Button Content="Отправить" Command="{Binding MainWindowModel.SendEmailCommand, Source={StaticResource Locator}}" Background="Black" Foreground="White"/>-->
+                                <Button Content="Отправить" Command="{Binding DataContext.SendEmailCommand, RelativeSource={RelativeSource AncestorType=Window}}" Background="Black" Foreground="White"/>
                                 <Button Background="Black" Content="Заплонировать" Foreground="White"/>
                                 <Button Background="Black" Content="Удалить" Foreground="White"/>
                             </StackPanel>
